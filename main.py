@@ -1,8 +1,14 @@
 from receiver import Receiver
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
 
 def main():
 
-    receiver = Receiver("0.0.0.0", 5005) # Olha para todas as interfaces de rede na porta 5005
+    port = int(os.getenv("PORT"))
+
+    receiver = Receiver("0.0.0.0", port) # Olha para todas as interfaces de rede na porta especificada
 
     receiver.receive()
 
