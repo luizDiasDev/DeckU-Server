@@ -6,9 +6,10 @@ load_dotenv()
 
 def main():
 
+    ip = os.getenv("PC_IP")
     port = int(os.getenv("PORT"))
 
-    receiver = Receiver("0.0.0.0", port) # Olha para todas as interfaces de rede na porta especificada
+    receiver = Receiver(ip, port)
 
     receiver.receive()
 
