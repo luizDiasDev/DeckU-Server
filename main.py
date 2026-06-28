@@ -2,9 +2,10 @@ from receiver import Receiver
 from dotenv import load_dotenv
 import os
 
-load_dotenv()
 
 def main():
+
+    load_dotenv()
 
     ip = os.getenv("PC_IP")
     port = int(os.getenv("PORT"))
